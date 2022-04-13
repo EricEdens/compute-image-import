@@ -26,10 +26,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/api/compute/v1"
 
-	"github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/common/imagefile"
-	"github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/common/utils/daisyutils"
-	"github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/common/utils/logging"
-	"github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/mocks"
+	"github.com/GoogleCloudPlatform/compute-image-import/cli_tools/common/imagefile"
+	"github.com/GoogleCloudPlatform/compute-image-import/cli_tools/common/utils/daisyutils"
+	"github.com/GoogleCloudPlatform/compute-image-import/cli_tools/common/utils/logging"
+	"github.com/GoogleCloudPlatform/compute-image-import/cli_tools/mocks"
 )
 
 func TestDaisyInflater_Inflate_ReadsDiskStatsFromWorker(t *testing.T) {
@@ -106,7 +106,7 @@ func TestCreateDaisyInflater_Image_HappyCase(t *testing.T) {
 	assert.Equal(t, "projects/test/uri/image", inflater.vars["source_image"])
 	daisyutils.CheckWorkflow(inflater.worker, func(wf *daisy.Workflow, err error) {
 		assert.Contains(t, getDisk(wf, 0).Licenses,
-			"projects/compute-image-tools/global/licenses/virtual-disk-import")
+			"projects/compute-image-import/global/licenses/virtual-disk-import")
 	})
 }
 

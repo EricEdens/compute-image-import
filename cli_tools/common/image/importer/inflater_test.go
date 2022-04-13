@@ -24,12 +24,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/api/compute/v1"
 
-	"github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/common/imagefile"
-	"github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/common/utils/daisyutils"
-	"github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/common/utils/logging"
-	"github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/common/utils/storage"
-	"github.com/GoogleCloudPlatform/compute-image-tools/cli_tools/mocks"
-	"github.com/GoogleCloudPlatform/compute-image-tools/proto/go/pb"
+	"github.com/GoogleCloudPlatform/compute-image-import/cli_tools/common/imagefile"
+	"github.com/GoogleCloudPlatform/compute-image-import/cli_tools/common/utils/daisyutils"
+	"github.com/GoogleCloudPlatform/compute-image-import/cli_tools/common/utils/logging"
+	"github.com/GoogleCloudPlatform/compute-image-import/cli_tools/common/utils/storage"
+	"github.com/GoogleCloudPlatform/compute-image-import/cli_tools/mocks"
+	"github.com/GoogleCloudPlatform/compute-image-import/proto/go/pb"
 )
 
 func TestCreateFallbackInflater_File(t *testing.T) {
@@ -139,7 +139,7 @@ func TestCreateInflater_Image(t *testing.T) {
 		assert.Equal(t, "projects/test/uri/image", wf.Vars["source_image"].Value)
 		inflatedDisk := getDisk(wf, 0)
 		assert.Contains(t, inflatedDisk.Licenses,
-			"projects/compute-image-tools/global/licenses/virtual-disk-import")
+			"projects/compute-image-import/global/licenses/virtual-disk-import")
 	})
 
 }

@@ -49,7 +49,7 @@ func newDataDiskProcessor(pd persistentDisk, client daisyCompute.Client, project
 			Name:             imageName,
 			SourceDisk:       pd.uri,
 			StorageLocations: storageLocation,
-			Licenses:         []string{"projects/compute-image-tools/global/licenses/virtual-disk-import"},
+			Licenses:         []string{"projects/compute-image-import/global/licenses/virtual-disk-import"},
 		},
 	}
 }

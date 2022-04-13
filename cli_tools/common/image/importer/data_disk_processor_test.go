@@ -24,7 +24,7 @@ import (
 )
 
 func Test_ImageIncludesTrackingLabelAndLicense(t *testing.T) {
-	trackingLicense := "projects/compute-image-tools/global/licenses/virtual-disk-import"
+	trackingLicense := "projects/compute-image-import/global/licenses/virtual-disk-import"
 	trackingLabelKey := "gce-image-import"
 	trackingLabelValue := "true"
 
